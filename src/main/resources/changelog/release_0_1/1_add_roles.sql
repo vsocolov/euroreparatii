@@ -1,0 +1,10 @@
+CREATE TABLE roles
+(
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE INDEX roles_name_UNIQUE (name ASC)
+)
+DEFAULT CHARACTER SET = utf8;
+
+INSERT INTO roles(name) VALUES('admin'), ('guest');

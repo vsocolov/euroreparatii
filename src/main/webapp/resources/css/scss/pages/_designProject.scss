@@ -1,0 +1,327 @@
+@import "../variables";
+
+.design-project {
+  padding-bottom: 40px;
+
+  ul.list,
+  ol.list {
+    max-width: 1010px;
+  }
+
+  .text {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: $font-color;
+    max-width: 960px;
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .steps-container {
+    .steps {
+      margin-bottom: 17px;
+      overflow: hidden;
+
+      .step {
+        display: inline-block;
+        height: 150px;
+        position: relative;
+        width: 210px;
+        margin-left: -17px;
+        background: no-repeat 0 0;
+        background-size: 100% auto;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          height: 100%;
+          width: 0;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &.step1 {
+          background: url(/resources/images/design-project-steps.png) no-repeat;
+        }
+
+        &.step2 {
+          background: url(/resources/images/design-project-steps.png) no-repeat 0 -150px;
+        }
+
+        &.step3 {
+          background: url(/resources/images/design-project-steps.png) no-repeat 0 -300px;
+        }
+
+        &.step4 {
+          background: url(/resources/images/design-project-steps.png) no-repeat 0 -450px;
+        }
+
+        &.step5 {
+          background: url(/resources/images/design-project-steps.png) no-repeat 0 -600px;
+        }
+
+        .title {
+          position: absolute;
+          bottom: 0;
+          width: inherit;
+          text-transform: uppercase;
+          height: 50px;
+          color: white;
+          text-align: center;
+          font-size: 14px;
+        }
+      }
+
+      @media screen and (max-width: 1050px) {
+        text-align: center;
+      }
+    }
+
+    .result {
+      border: 2px solid $third-color;
+      clear: both;
+      position: relative;
+      max-width: 1004px;
+
+      &::before,
+      &::after {
+        border: 2px solid $third-color;
+        content: "";
+        display: block;
+        height: 70px;
+        position: absolute;
+        width: 70px;
+      }
+
+      &::before {
+        border-bottom: medium none;
+        border-right: medium none;
+        left: -4px;
+        top: -4px;
+      }
+
+      &::after {
+        border-left: medium none;
+        border-top: medium none;
+        bottom: -4px;
+        right: -4px;
+      }
+
+      @media screen and (max-width: 400px) {
+        height: 200px;
+        width: 300px;
+
+        img {
+          height: 196px;
+        }
+
+        a {
+          left: 100px !important;
+        }
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        display: none;
+      }
+
+      @media screen and (min-width: 401px) and (max-width: 760px) {
+        height: 200px;
+        width: 450px;
+        margin: 0 auto;
+
+        img {
+          height: 196px;
+          width: 446px;
+        }
+      }
+
+      a {
+        position: absolute;
+        width: 160px;
+        height: 40px;
+        left: 2px;
+        bottom: 10px;
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        text-transform: uppercase;
+        background: url(/resources/images/design-project-result-title.png) no-repeat;
+
+        &::before {
+          display: inline-block;
+          width: 0;
+          height: 100%;
+          content: '';
+          margin-left: -4px;
+          margin-right: -4px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .rectangle-title {
+    background-color: $secondary-color;
+    color: white;
+    max-width: 1010px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    height: 44px;
+    text-transform: uppercase;
+    padding-top: 9px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+    @media screen and (max-width: 760px) {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+  }
+
+  .design-project-price {
+    max-width: 1010px;
+
+    .table-panel {
+      padding-left: 0;
+      padding-right: 20px;
+
+      table {
+        th {
+          text-transform: uppercase;
+        }
+
+        tr {
+          td:first-child {
+            text-transform: none;
+          }
+        }
+      }
+    }
+
+    .present-panel {
+      padding-left: 20px;
+      padding-right: 0;
+      height: 128px;
+      background: $third-color url(/resources/images/party-flags.png) right top no-repeat;
+      color: white;
+      font-size: 18px;
+      padding-top: 26px;
+      text-shadow: 1px 1px 3px $font-color;
+    }
+
+    .order-btn {
+      background-color: $third-color;
+      outline: none;
+      color: white;
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      height: 47px;
+      line-height: 47px;
+      margin: 0 auto;
+      text-align: center;
+      width: 365px;
+      border-radius: 80px;
+
+      @media screen and (max-width: 460px) {
+        width: 280px;
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 760px) {
+      .table-panel {
+        padding: 0;
+      }
+
+      .present-panel {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .services-container {
+    padding-top: 20px;
+
+    .service {
+      display: inline-block;
+      padding: 2px;
+      border: 2px solid #c5c5c5;
+      position: relative;
+      margin-left: -2px;
+      margin-right: 42px;
+      margin-bottom: 36px;
+
+      &::before,
+      &::after {
+        border: 2px solid #c5c5c5;
+        content: "";
+        height: 70px;
+        position: absolute;
+        width: 70px;
+      }
+
+      &::before {
+        border-bottom: medium none;
+        border-right: medium none;
+        left: -4px;
+        top: -4px;
+      }
+
+      &::after {
+        border-left: medium none;
+        border-top: medium none;
+        bottom: -4px;
+        right: -4px;
+      }
+
+      .text-area {
+        background-color: $secondary-color;
+        color: white;
+        font-size: 16px;
+        font-weight: 300;
+        height: 58px;
+        line-height: normal;
+        margin-top: 2px;
+        text-align: center;
+        vertical-align: middle;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          height: 100%;
+          margin-left: -4px;
+          margin-right: -4px;
+          vertical-align: middle;
+          width: 0;
+        }
+
+        div {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        span {
+          display: block;
+          font-size: 12px;
+          font-weight: bold;
+          margin-top: 5px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    @media screen and (max-width: 990px) {
+      text-align: center;
+    }
+
+  }
+
+}

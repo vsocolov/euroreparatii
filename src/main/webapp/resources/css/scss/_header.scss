@@ -1,0 +1,87 @@
+@import "variables";
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+  .site-logo,
+  .call-center {
+    margin: 0 auto;
+  }
+}
+
+#header {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .site-logo {
+    width: 253px;
+    height: 105px;
+    display: block;
+    outline: none;
+    margin-top: 7px;
+  }
+
+  .call-center {
+    width: 280px;
+    margin-top: 15px;
+
+    .logo {
+      img {
+        width: 85px;
+        height: 95px;
+      }
+    }
+
+    .info {
+      text-align: right;
+      width: 185px;
+
+      .schedule {
+        color: $font-color;
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 12px;
+      }
+
+      .phone-container {
+        color: #000000;
+        font-size: 21px;
+        line-height: 21px;
+        width: inherit;
+
+        .phone-icon {
+          width: 18px;
+          height: 18px;
+          display: block;
+          background: url('/resources/images/phone.png') no-repeat;
+          margin-top: 6px;
+        }
+      }
+
+      .email-container {
+        position: relative;
+        color: $font-color;
+        font-size: 12px;
+        width: inherit;
+
+        a {
+          color: $font-color;
+        }
+
+        .email-icon {
+          width: 16px;
+          height: 16px;
+          display: block;
+          background: url('/resources/images/email.png') no-repeat;
+          margin-top: 1px;
+          margin-left: 4px;
+        }
+      }
+    }
+
+    @media only screen and (min-device-width: 768px) {
+      float: right;
+    }
+  }
+}

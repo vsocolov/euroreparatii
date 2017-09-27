@@ -1,0 +1,200 @@
+@import "../variables";
+
+@mixin totals-paragraphs() {
+  p {
+    color: white;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    padding-bottom: 19px;
+
+    &::after {
+      clear: both;
+      content: " ";
+      display: table;
+    }
+
+    span {
+      color: white;
+      float: right;
+      font-size: 25px;
+      font-weight: bold;
+
+      i {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: lowercase;
+      }
+
+      em {
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      @media screen and (max-width: 568px) {
+        font-size: 20px;
+
+        i {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.calculator {
+
+  .main-container {
+    margin-top: 20px;
+    background-color:$primary-color;
+    border-radius: 4px 4px 0 0;
+    padding-top: 32px;
+
+    .data {
+      width: 600px;
+      margin: 0 auto;
+      padding-bottom: 25px;
+
+      .row-container {
+        display: block;
+        padding-bottom: 19px;
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+
+        label {
+          color: white;
+          float: left;
+          font-weight: 400;
+          line-height: 29px;
+        }
+
+        input,
+        select {
+          float: right;
+          width: 400px;
+          color: $font-color;
+        }
+      }
+    }
+
+    .estimated-costs {
+      margin: auto;
+      max-width: 730px;
+      padding: 0 10px;
+
+      @include totals-paragraphs;
+    }
+
+    @media screen and (max-width: 568px) {
+      padding-top: 20px;
+
+      .data {
+        width: auto;
+        padding: 0 10px;
+
+        .row-container {
+          padding-bottom: 15px;
+
+          label {
+            float: none;
+            display: block;
+            line-height: 20px;
+          }
+
+          input,
+          select {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .totals-container {
+    background-color: $third-color;
+    border-radius: 0 0 4px 4px;
+    margin-bottom: 60px;
+    margin-top: -10px;
+    padding-top: 28px;
+    padding-bottom: 10px;
+
+    .costs {
+      margin: auto;
+      max-width: 730px;
+      padding: 0 10px;
+
+      @include totals-paragraphs;
+
+      p:first-child {
+        font-size: 24px;
+        font-weight: normal;
+        text-transform: uppercase;
+
+        span {
+          font-size: 28px;
+          text-transform: none;
+        }
+      }
+
+      @media screen and (max-width: 568px) {
+        p:first-child {
+          font-size: 20px;
+
+          i {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .notes {
+    padding-bottom: 60px;
+
+    .title {
+      color: $font-color;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 20px;
+      margin-bottom: 20px;
+      padding-left: 26px;
+      position: relative;
+      text-transform: uppercase;
+
+      &::before {
+        background: url("/resources/images/mini-arrow.png") no-repeat;
+        content: "";
+        display: block;
+        height: 16px;
+        left: 0;
+        position: absolute;
+        top: 3px;
+        width: 15px;
+      }
+    }
+
+    ul li {
+      color: $font-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      padding-bottom: 7px;
+      padding-left: 26px;
+      position: relative;
+
+      &::before {
+        background: url("/resources/images/bullet.png") no-repeat;
+        content: "";
+        display: block;
+        height: 11px;
+        left: 0;
+        position: absolute;
+        top: 7px;
+        width: 11px;
+      }
+    }
+  }
+}

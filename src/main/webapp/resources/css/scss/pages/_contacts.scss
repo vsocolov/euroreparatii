@@ -1,0 +1,349 @@
+@import "../variables";
+
+.contacts-page {
+
+  .image-slider {
+    margin-top: 30px;
+    max-width: 940px;
+    border-radius: 10px;
+    border-bottom: 3px solid $primary-color;
+
+    .image-cell {
+      position: relative;
+
+      .slider-text {
+        z-index: 10;
+        position: absolute;
+
+        h6 {
+          color: $primary-color;
+          font-size: 36px;
+          font-weight: 400;
+          line-height: 45px;
+        }
+
+        .name {
+          color: $primary-color;
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 49px;
+
+          span {
+            color: $font-color;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 49px;
+          }
+        }
+
+        &.ivan {
+          right: 35px;
+          top: -15px;
+        }
+
+        &.radion {
+          left: 0;
+          top: -15px;
+        }
+
+        @media screen and (max-width: 360px) {
+          h6 {
+            font-size: 15px;
+            line-height: 14px;
+          }
+
+          .name {
+            font-size: 13px;
+            line-height: 10px;
+
+            span {
+              font-size: 12px;
+              line-height: 15px;
+            }
+          }
+
+          &.ivan {
+            right: 0;
+            top: -12px;
+          }
+
+          &.radion {
+            top: -11px;
+
+            h6 {
+              line-height: 12px;
+            }
+
+            .name {
+              line-height: 9px;
+            }
+          }
+        }
+
+        @media screen and (min-width: 361px) and (max-width: 480px) {
+          h6 {
+            font-size: 16px;
+            line-height: 16px;
+          }
+
+          .name {
+            font-size: 15px;
+            line-height: 15px;
+
+            span {
+              font-size: 15px;
+              line-height: 15px;
+            }
+          }
+
+          &.ivan {
+            right: 0;
+            top: -13px;
+          }
+
+          &.radion {
+            top: -11px;
+
+            h6 {
+              line-height: 12px;
+            }
+
+            .name {
+              line-height: 9px;
+            }
+          }
+        }
+
+        @media screen and (min-width: 481px) and (max-width: 600px) {
+          h6 {
+            font-size: 20px;
+            line-height: 20px;
+          }
+
+          .name {
+            font-size: 18px;
+            line-height: 18px;
+
+            span {
+              font-size: 15px;
+              line-height: 18px;
+            }
+          }
+
+          &.ivan {
+            right: 0;
+            top: -13px;
+          }
+
+          &.radion {
+            top: -13px;
+            right: 0;
+            left: unset;
+          }
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 700px) {
+          h6 {
+            font-size: 25px;
+            line-height: 30px;
+          }
+
+          .name {
+            font-size: 20px;
+            line-height: 20px;
+
+            span {
+              line-height: 20px;
+            }
+          }
+
+          &.ivan {
+            right: 0;
+            top: -13px;
+          }
+
+          &.radion {
+            top: -13px;
+            right: -5px;
+            left: unset;
+          }
+        }
+
+        @media screen and (min-width: 701px) and (max-width: 800px) {
+          h6 {
+            font-size: 30px;
+            line-height: 30px;
+          }
+
+          .name {
+            font-size: 20px;
+            line-height: 20px;
+
+            span {
+              line-height: 42px;
+            }
+          }
+
+          &.ivan {
+            right: 0;
+            top: -13px;
+          }
+
+          &.radion {
+            top: -13px;
+            right: -5px;
+            left: unset;
+          }
+        }
+
+      }
+    }
+
+    .slick-arrow {
+      display: none !important;
+    }
+  }
+
+  .slider-footer {
+    max-width: 940px;
+
+    .left-content {
+      .phone-box {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 8px;
+        padding-left: 28px;
+        position: relative;
+        color: $font-color;
+
+        span:first-child {
+          font-size: 34px;
+          font-weight: 600;
+          line-height: 36px;
+          margin-right: 12px;
+
+          a {
+            color: black;
+            outline: none;
+            text-decoration: none !important;
+
+            &:hover {
+              border-bottom: 1px dotted #2e69c9;
+            }
+          }
+        }
+
+        &::before {
+          background: url("/resources/images/phone.png") no-repeat;
+          content: "";
+          display: block;
+          height: 24px;
+          left: 0;
+          position: absolute;
+          top: 10px;
+          width: 24px;
+        }
+
+        @media screen and (max-width: 400px) {
+          &::before {
+            top: 6px;
+          }
+
+          span:first-child {
+            font-size: 25px;
+            line-height: 25px;
+          }
+
+          span:last-child {
+            display: block;
+          }
+        }
+
+        @media screen and (max-width: 800px) {
+          span:last-child {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .right-content {
+      .info-container {
+        position: relative;
+
+        a {
+          display: inline-block;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 25px;
+          padding-left: 35px;
+          position: relative;
+          vertical-align: top;
+          outline: none;
+
+          &::before {
+            content: "";
+            display: block;
+            height: 24px;
+            left: 0;
+            position: absolute;
+            top: 1px;
+            width: 24px;
+          }
+
+          &:hover {
+            text-decoration: none;
+            color: $link-bootstrap-color;
+          }
+        }
+
+        &.email {
+          a {
+            &::before {
+              background: url("/resources/images/email-ico.png") no-repeat;
+            }
+          }
+        }
+
+        &.skype {
+          a {
+            &::before {
+              background: url("/resources/images/skype-ico.png") no-repeat;
+            }
+          }
+        }
+
+        &.whatsapp {
+          a {
+            color: $font-color;
+
+            &::before {
+              background: url("/resources/images/whatsapp-ico.png") no-repeat;
+            }
+          }
+        }
+
+        &.viber {
+          a {
+            color: $font-color;
+
+            &::before {
+              background: url("/resources/images/viber-ico.png") no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .get-consultation-block {
+    .title {
+      margin-bottom: 0;
+    }
+  }
+
+  #location-map {
+    height: 465px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../variables";
+
+.design {
+  max-width: 960px;
+
+  p {
+    color: $font-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 10px;
+    text-align: justify;
+  }
+
+  .image-gallery-container {
+    margin: 0 auto;
+  }
+
+  .design-price-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    table {
+      &.custom-table {
+        max-width: 100%;
+      }
+    }
+  }
+}
