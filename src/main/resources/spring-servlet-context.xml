@@ -18,8 +18,6 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
     <mvc:resources mapping="/robots.txt" location="/robots.txt"/>
     <mvc:resources mapping="/google20748e6fcbfc2695.html" location="/google20748e6fcbfc2695.html"/>
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>
-
     <!-- View resolvers -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
@@ -50,21 +48,4 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
         </property>
     </bean>
     <!-- End Tiles definitions -->
-
-    <!-- Multipart Resolver for uloading files -->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
-    <!-- End Multipart Resolver -->
-
-    <!-- Security definitions -->
-    <security:http auto-config="true" access-denied-page="/login" use-expressions="true">
-        <security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/loginfailed"/>
-        <security:logout logout-success-url="/logout"/>
-    </security:http>
-
-    <security:authentication-manager>
-        <security:authentication-provider ref="customAuthenticationProvider"/>
-    </security:authentication-manager>
-
-    <security:global-method-security secured-annotations="enabled"/>
-    <!-- End Security definitions -->
 </beans>
