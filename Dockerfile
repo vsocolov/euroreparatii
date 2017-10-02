@@ -34,20 +34,25 @@ ENV M2_HOME /opt/apache-maven-3.5.0
 ENV PATH $M2_HOME/bin:$PATH
 
 # Download Tomcat 8
-RUN wget "http://mirrors.ukfast.co.uk/sites/ftp.apache.org/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz" -O /tmp/apache-tomcat-8.5.20.tar.gz
-RUN tar xzf /tmp/apache-tomcat-8.5.20.tar.gz -C /opt/
+RUN wget "http://mirror.ox.ac.uk/sites/rsync.apache.org/tomcat/tomcat-8/v8.5.23/bin/apache-tomcat-8.5.23.tar.gz" -O /tmp/apache-tomcat-8.5.23.tar.gz
+RUN tar xzf /tmp/apache-tomcat-8.5.23.tar.gz -C /opt/
 
 # Set up CATALINA_HOME environment variable
-ENV CATALINA_HOME /opt/apache-tomcat-8.5.20
+ENV CATALINA_HOME /opt/apache-tomcat-8.5.23
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN chmod +x ${CATALINA_HOME}/bin/*sh
+
+# Copy project war file to tomcat
+RUN chmod 777 ROOT.war
+RUN rm -rf /opt/apache-tomcat-8.5.23/webapps/ROOT
+RUN cp -p ROOT.war /opt/apache-tomcat-8.5.23/webapps/
 
 # clean yum cache
 RUN yum clean all
 # Remove downloaded software from tmp folder
 RUN rm -rf /tmp/jdk-8-linux-x64.rpm
 RUN rm -rf /tmp/apache-maven-3.5.0-bin.tar.gz
-RUN rm -rf /tmp/apache-tomcat-8.5.20.tar.gz
+RUN rm -rf /tmp/apache-tomcat-8.5.23.tar.gz
 
 EXPOSE 8080
 
